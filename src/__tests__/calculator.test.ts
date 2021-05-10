@@ -24,4 +24,34 @@ let dataset = [
   { x: 81, y: 227, method: "divide" },
 ];
 
-describe("Calculator", () => {});
+function mySwitchCase (data) {
+  switch (data.method) {
+    case 'add':
+      return calculator.add(data.x, data.y)
+      break
+    case 'subtract':
+      return calculator.subtract(data.x, data.y)
+      break
+    case 'multiply':
+      return calculator.multiply(data.x, data.y)
+      break
+    case 'divide':
+      return calculator.divide(data.x, data.y)
+      break
+  }
+}
+
+describe("Calculator", () => {
+  it('Can add', () => {
+    console.log(calculator.add(dataset[0].x, dataset[0].y))
+  })
+  it('Can subtract', () => {
+    console.log(calculator.subtract(dataset[1].x, dataset[1].y))
+  })
+  it('Can multiply', () => {
+    console.log(calculator.multiply(dataset[2].x, dataset[2].y))
+  })
+  it('Can divide', () => {
+    console.log(calculator.divide(dataset[3].x, dataset[3].y))
+  })
+});
